@@ -1,0 +1,2 @@
+# AKANIMELIST
+Belajar Nextjs
