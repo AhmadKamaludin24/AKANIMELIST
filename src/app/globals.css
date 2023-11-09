@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.loading{
+  width: 160px;
+  height: 160px;
+  display: grid;
+  color:#FF3A08;
+  background:
+    conic-gradient(from -153deg at right,#0000,currentColor 1deg 126deg,#0000 127deg) calc(50% + 10px) 0   /20px 50%,
+    conic-gradient(from   27deg at left ,#0000,currentColor 1deg 126deg,#0000 127deg) calc(50% - 10px) 100%/20px 50%,
+
+    linear-gradient(to top    right,currentColor 50%,#0000 0%) calc(50% + 20px) calc(50% - 20px) /40px 40px,
+    linear-gradient(to bottom left ,currentColor 50%,#0000 0%) calc(50% - 20px) calc(50% + 20px) /40px 40px;
+  background-repeat: no-repeat;
+  -webkit-mask:radial-gradient(circle 10px,#0000 90%,#000);
+  animation:sh6 1.5s infinite linear;
+}
+.custom-loader:before,
+.custom-loader:after {
+  content: "";
+  grid-area: 1/1;
+  background:inherit; 
+  transform: rotate(60deg);
+}
+.custom-loader:after {
+  transform: rotate(120deg);
+}
+
+@keyframes sh6 { 
+  100%{transform: rotate(1turn)}
+}
+
+img {
+  width: 100%;
+  height: auto;
+  transition: .3s ease all;
+  -webkit-transition:.3s ease all;
+  -moz-transition:.3s ease all;
+  -ms-transition:.3s ease all;
+  -o-transition:.3s ease all;
+}
+img:hover{
+  scale: 102℅;
+}
+  
